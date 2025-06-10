@@ -27,11 +27,11 @@ jobs:
 
       - name: Build and Push Docker image
         run: |
-          docker build -t finalprojectacr.azurecr.io/final-web-app:${{ github.sha }} .
-          docker push finalprojectacr.azurecr.io/final-web-app:${{ github.sha }}
+          docker build -t finalcr.azurecr.io/final-web-app:${{ github.sha }} .
+          docker push finalcr.azurecr.io/final-web-app:${{ github.sha }}
 
       - name: Deploy to App Service
         uses: azure/webapps-deploy@v2
         with:
           app-name: "finaldockerapp"
-          images: "finalprojectacr.azurecr.io/final-web-app:${{ github.sha }}"
+          images: "finalcr.azurecr.io/final-web-app:${{ github.sha }}"
