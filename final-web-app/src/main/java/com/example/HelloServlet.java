@@ -14,9 +14,9 @@ public class HelloServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         // Secret'ları environment'dan çekiyoruz
-        String dbUser = System.getenv("POSTGRES-USER");
-        String dbPass = System.getenv("POSTGRES-PASS");
-        //String dbHost = System.getenv("POSTGRES-HOST");
+        String dbUser = System.getenv("POSTGRESUSER");
+        String dbPass = System.getenv("POSTGRESPASS");
+        String dbHost = System.getenv("POSTGRESHOST");
         String dbName = "postgres"; // bunu Postgre'de oluşturduysan, kendi adınla değiştir
 
         String jdbcUrl = "jdbc:postgresql://" + dbHost + ":5432/" + dbName;
