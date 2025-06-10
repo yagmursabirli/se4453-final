@@ -14,12 +14,12 @@ public class HelloServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         // Secret'ları environment'dan çekiyoruz
-        String dbUser = System.getenv("POSTGREUSERNAME");
+        String dbUser = System.getenv("POSTGREUSERNAME2");
         String dbPass = System.getenv("POSTGREPASSWORD");
         String dbHost = System.getenv("POSTGREHOSTING");
         String dbName = "postgres"; // bunu Postgre'de oluşturduysan, kendi adınla değiştir
 
-        String jdbcUrl = "jdbc:postgresql://" + dbHost + ":5432/" + dbName;
+        String jdbcUrl = "jdbc:postgresql://" + dbHost + ":5432/" + dbName  + "?sslmode=require";
 
         Connection conn = null;
 
