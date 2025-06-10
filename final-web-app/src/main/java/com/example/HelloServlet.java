@@ -13,18 +13,16 @@ public class HelloServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        // Secret'ları environment'dan çekiyoruz
         String dbUser = System.getenv("POSTGREUSERNAME2");
         String dbPass = System.getenv("POSTGREPASSWORD");
         String dbHost = System.getenv("POSTGREHOSTING");
-        String dbName = "postgres"; // bunu Postgre'de oluşturduysan, kendi adınla değiştir
+        String dbName = "postgres";
 
-        String jdbcUrl = "jdbc:postgresql://" + dbHost + ":5432/postgres?sslmode=require";
+        String jdbcUrl = "jdbc:postgresql://" + dbHost + ":5432/" + dbName + "?sslmode=require";
 
-        Connection conn = DriverManager.getConnection(jdbcUrl, dbUser, dbPass);
         try {
             Class.forName("org.postgresql.Driver");
-            conn = DriverManager.getConnection(jdbcUrl, dbUser, dbPass);
+            Connection conn = DriverManager.getConnection(jdbcUrl, dbUser, dbPass);
 
             out.println("<h1>Hello from Dockerized Java App!♥♥</h1>");
             out.println("<h2>Veritabanına bağlantı başarılı! 🎉🐘</h2>");
