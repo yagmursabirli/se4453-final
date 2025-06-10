@@ -11,6 +11,6 @@ public class HelloServlet extends HttpServlet {
             throws IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("<h1>Hello from Dockerized Java App!♥</h1>");
+        out.println("<h1>Hello from Dockerized Java App!♥♥</h1>");
     }
 }
