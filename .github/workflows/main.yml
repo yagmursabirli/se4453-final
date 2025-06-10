@@ -36,4 +36,4 @@ jobs:
         with:
           app-name: "finaldockerapp"
           images: "finalcr.azurecr.io/final-web-app:${{ github.sha }}"
-        working-directory: ./final-web-app
+      
