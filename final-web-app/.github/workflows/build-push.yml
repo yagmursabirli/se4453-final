@@ -21,7 +21,7 @@ jobs:
       - name: Docker Login to ACR
         uses: azure/docker-login@v1
         with:
-          login-server: finalprojectacr.azurecr.io
+          login-server: finalcr.azurecr.io
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
 
