@@ -19,10 +19,9 @@ public class HelloServlet extends HttpServlet {
         String dbHost = System.getenv("POSTGREHOSTING");
         String dbName = "postgres"; // bunu Postgre'de oluşturduysan, kendi adınla değiştir
 
-        String jdbcUrl = "jdbc:postgresql://" + dbHost + ":5432/" + dbName  + "?sslmode=require";
+        String jdbcUrl = "jdbc:postgresql://" + dbHost + ":5432/postgres?sslmode=require";
 
-        Connection conn = null;
-
+        Connection conn = DriverManager.getConnection(jdbcUrl, dbUser, dbPass);
         try {
             Class.forName("org.postgresql.Driver");
             conn = DriverManager.getConnection(jdbcUrl, dbUser, dbPass);
