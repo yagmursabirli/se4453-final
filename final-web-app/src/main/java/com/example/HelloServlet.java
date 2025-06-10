@@ -13,7 +13,7 @@ public class HelloServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        String dbUser = System.getenv("POSTGREUSERNAME2");
+        String dbUser = System.getenv("POSTGREUSERNAME3");
         String dbPass = System.getenv("POSTGREPASSWORD");
         String dbHost = System.getenv("POSTGREHOSTING");
         String dbName = "postgres";
