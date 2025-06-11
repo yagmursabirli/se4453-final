@@ -25,12 +25,12 @@ public class HelloServlet extends HttpServlet {
             Connection conn = DriverManager.getConnection(jdbcUrl, dbUser, dbPass);
 
             out.println("<h1>Hello from Dockerized Java App!♥♥</h1>");
-            out.println("<h2>Veritabanına bağlantı başarılı! 🎉🐘</h2>");
+            out.println("<h2>Database connection is successfull!🐘</h2>");
 
             conn.close();
         } catch (Exception e) {
             e.printStackTrace();
-            out.println("<h1>HATA 😢</h1>");
+            out.println("<h1>Error :(</h1>");
             out.println("<p>" + e.getMessage() + "</p>");
         }
     }
